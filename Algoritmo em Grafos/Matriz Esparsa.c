@@ -55,7 +55,7 @@ void apaga_matriz(Tipo_Mat_Esparsa *matE){ // funcao para liberar a memoria da m
             auxLinha = auxColuna->inicio;// aux para percorrer as linhas
 
             while(auxColuna->inicio != NULL){
-                auxLinha = auxColuna->inicio;// aux para ajudar na liberação de memoria das linhas
+                auxLinha = auxColuna->inicio;// aux para ajudar na liberaÃ§Ã£o de memoria das linhas
                 auxColuna->inicio = auxLinha->proximo;// auxLinha recebe o proximo elemento
                 free(auxLinha); //liberando a memoria para cada linha da coluna
             }
@@ -64,7 +64,7 @@ void apaga_matriz(Tipo_Mat_Esparsa *matE){ // funcao para liberar a memoria da m
             free(auxColuna); // liberar cada coluna depois de seus elementos
         }
 
-        free(matE); // liberação da matriz
+        free(matE); // liberaÃ§Ã£o da matriz
     }
 }
 
@@ -96,13 +96,13 @@ void inserir_coluna(int coluna, Tipo_Mat_Esparsa *matE){ // inserir coluna
         criar->inicio = NULL;
         criar->proximo = NULL;
 
-        if(matE->inicio == NULL || matE->inicio->ID_Coluna > coluna){ // se for o primeiro elemento ou o id é menor que o primeiro elemento
+        if(matE->inicio == NULL || matE->inicio->ID_Coluna > coluna){ // se for o primeiro elemento ou o id Ã© menor que o primeiro elemento
             criar->proximo = matE->inicio;
             matE->inicio=criar;
         }else{
 
             while((aux->proximo != NULL) && (aux->proximo->ID_Coluna < coluna)){
-                aux = aux->proximo; // percorrer ate achar a posicao para inserção
+                aux = aux->proximo; // percorrer ate achar a posicao para inserÃ§Ã£o
             }
 
             criar->proximo = aux->proximo;
@@ -208,7 +208,7 @@ void inserir_elemento_matriz_esparsa(int linha, int coluna, int valor, Tipo_Mat_
             }
             */
 
-            //atualizar a dimensão da matriz
+            //atualizar a dimensÃ£o da matriz
             if(coluna > matE->qtd_colunas){
                 matE->qtd_colunas = coluna;
             }else if(matE->qtd_colunas == 0){
